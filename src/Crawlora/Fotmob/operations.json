@@ -1,0 +1,1744 @@
+{
+  "platform": "fotmob",
+  "operationCount": 31,
+  "operationIds": [
+    "fotmob-audio-matches",
+    "fotmob-fifa-ranking-periods",
+    "fotmob-fifa-rankings",
+    "fotmob-latest-news",
+    "fotmob-league",
+    "fotmob-leagues",
+    "fotmob-lineup-builder-players",
+    "fotmob-lineup-builder-team",
+    "fotmob-match",
+    "fotmob-match-media",
+    "fotmob-matches",
+    "fotmob-news",
+    "fotmob-news-article",
+    "fotmob-player",
+    "fotmob-player-match-stats",
+    "fotmob-player-matches",
+    "fotmob-player-stats",
+    "fotmob-search",
+    "fotmob-seasons",
+    "fotmob-stats",
+    "fotmob-stats-categories",
+    "fotmob-table",
+    "fotmob-team",
+    "fotmob-team-fixtures",
+    "fotmob-team-news",
+    "fotmob-transfers",
+    "fotmob-trending-news",
+    "fotmob-trending-searches",
+    "fotmob-tv-guide",
+    "fotmob-tv-guide-channels",
+    "fotmob-tv-guide-countries"
+  ],
+  "methods": {
+    "audio_matches": "fotmob-audio-matches",
+    "fifa_ranking_periods": "fotmob-fifa-ranking-periods",
+    "fifa_rankings": "fotmob-fifa-rankings",
+    "latest_news": "fotmob-latest-news",
+    "league": "fotmob-league",
+    "leagues": "fotmob-leagues",
+    "lineup_builder_players": "fotmob-lineup-builder-players",
+    "lineup_builder_team": "fotmob-lineup-builder-team",
+    "match": "fotmob-match",
+    "match_media": "fotmob-match-media",
+    "matches": "fotmob-matches",
+    "news": "fotmob-news",
+    "news_article": "fotmob-news-article",
+    "player": "fotmob-player",
+    "player_match_stats": "fotmob-player-match-stats",
+    "player_matches": "fotmob-player-matches",
+    "player_stats": "fotmob-player-stats",
+    "search": "fotmob-search",
+    "seasons": "fotmob-seasons",
+    "stats": "fotmob-stats",
+    "stats_categories": "fotmob-stats-categories",
+    "table": "fotmob-table",
+    "team": "fotmob-team",
+    "team_fixtures": "fotmob-team-fixtures",
+    "team_news": "fotmob-team-news",
+    "transfers": "fotmob-transfers",
+    "trending_news": "fotmob-trending-news",
+    "trending_searches": "fotmob-trending-searches",
+    "tv_guide": "fotmob-tv-guide",
+    "tv_guide_channels": "fotmob-tv-guide-channels",
+    "tv_guide_countries": "fotmob-tv-guide-countries"
+  },
+  "operations": {
+    "fotmob-audio-matches": {
+      "id": "fotmob-audio-matches",
+      "method": "GET",
+      "path": "/fotmob/audio-matches",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-fifa-ranking-periods": {
+      "id": "fotmob-fifa-ranking-periods",
+      "method": "GET",
+      "path": "/fotmob/fifa-ranking-periods",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "gender",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "men",
+            "women"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "description": "Ranking gender",
+          "enum": [
+            "men",
+            "women"
+          ],
+          "in": "query",
+          "name": "gender",
+          "required": true,
+          "type": "string",
+          "x-example": "men"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-fifa-rankings": {
+      "id": "fotmob-fifa-rankings",
+      "method": "GET",
+      "path": "/fotmob/fifa-rankings",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "gender",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "men",
+            "women"
+          ]
+        },
+        {
+          "name": "period_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Ranking gender",
+          "enum": [
+            "men",
+            "women"
+          ],
+          "in": "query",
+          "name": "gender",
+          "required": true,
+          "type": "string",
+          "x-example": "men"
+        },
+        {
+          "description": "Period id returned for this gender by /fotmob/fifa-ranking-periods",
+          "in": "query",
+          "name": "period_id",
+          "required": true,
+          "type": "string",
+          "x-example": "20260720"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-latest-news": {
+      "id": "fotmob-latest-news",
+      "method": "GET",
+      "path": "/fotmob/latest-news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "start_index",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "Zero-based news offset; defaults to 0",
+          "in": "query",
+          "maximum": 10000,
+          "minimum": 0,
+          "name": "start_index",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-league": {
+      "id": "fotmob-league",
+      "method": "GET",
+      "path": "/fotmob/league",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "season",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "shotmap",
+          "in": "query",
+          "type": "boolean"
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id from /fotmob/leagues",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "integer",
+          "x-example": 47
+        },
+        {
+          "description": "Optional season value from /fotmob/seasons for this league",
+          "in": "query",
+          "name": "season",
+          "type": "string",
+          "x-example": "2025/2026"
+        },
+        {
+          "default": false,
+          "description": "Include the optional overview shot map; increases response size",
+          "in": "query",
+          "name": "shotmap",
+          "type": "boolean"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-leagues": {
+      "id": "fotmob-leagues",
+      "method": "GET",
+      "path": "/fotmob/leagues",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-lineup-builder-players": {
+      "id": "fotmob-lineup-builder-players",
+      "method": "GET",
+      "path": "/fotmob/lineup-builder-players",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "player_ids",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Comma-separated list of 1 to 11 numeric FotMob player ids",
+          "in": "query",
+          "name": "player_ids",
+          "required": true,
+          "type": "string",
+          "x-example": "961995,562727"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-lineup-builder-team": {
+      "id": "fotmob-lineup-builder-team",
+      "method": "GET",
+      "path": "/fotmob/lineup-builder-team",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "team_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob team id discoverable through /fotmob/search",
+          "in": "query",
+          "name": "team_id",
+          "required": true,
+          "type": "string",
+          "x-example": "9825"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-match": {
+      "id": "fotmob-match",
+      "method": "GET",
+      "path": "/fotmob/match",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob match id",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "5181825"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-match-media": {
+      "id": "fotmob-match-media",
+      "method": "GET",
+      "path": "/fotmob/match-media",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob match id, discoverable from /fotmob/matches or /fotmob/search",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "5795457"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-matches": {
+      "id": "fotmob-matches",
+      "method": "GET",
+      "path": "/fotmob/matches",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "date",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "timezone",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "Date in YYYYMMDD format",
+          "in": "query",
+          "name": "date",
+          "required": true,
+          "type": "string",
+          "x-example": "20260925"
+        },
+        {
+          "description": "IANA timezone; defaults to UTC",
+          "in": "query",
+          "name": "timezone",
+          "type": "string",
+          "x-example": "Asia/Shanghai"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-news": {
+      "id": "fotmob-news",
+      "method": "GET",
+      "path": "/fotmob/news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "start_index",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "string",
+          "x-example": "47"
+        },
+        {
+          "description": "Zero-based news offset; defaults to 0",
+          "in": "query",
+          "maximum": 10000,
+          "minimum": 0,
+          "name": "start_index",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-news-article": {
+      "id": "fotmob-news-article",
+      "method": "GET",
+      "path": "/fotmob/news-article",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Complete FotMob top-news article id and slug from the public article URL",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "29776-fotmob-totw-premier-league-matchday-5s-best-xi"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-player": {
+      "id": "fotmob-player",
+      "method": "GET",
+      "path": "/fotmob/player",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "include_market_values",
+          "in": "query",
+          "type": "boolean"
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob player id from fotmob/search",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "961995"
+        },
+        {
+          "default": true,
+          "description": "Include market-value history; defaults to true",
+          "in": "query",
+          "name": "include_market_values",
+          "type": "boolean"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-player-match-stats": {
+      "id": "fotmob-player-match-stats",
+      "method": "GET",
+      "path": "/fotmob/player-match-stats",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "player_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "match_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob player id",
+          "in": "query",
+          "name": "player_id",
+          "required": true,
+          "type": "string",
+          "x-example": "961995"
+        },
+        {
+          "description": "Numeric FotMob match id",
+          "in": "query",
+          "name": "match_id",
+          "required": true,
+          "type": "string",
+          "x-example": "5795457"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-player-matches": {
+      "id": "fotmob-player-matches",
+      "method": "GET",
+      "path": "/fotmob/player-matches",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "player_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "team_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "before",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob player id from fotmob/search",
+          "in": "query",
+          "name": "player_id",
+          "required": true,
+          "type": "string",
+          "x-example": "961995"
+        },
+        {
+          "default": "all",
+          "description": "all, or a numeric league id from fotmob/player matchFilters",
+          "in": "query",
+          "name": "league_id",
+          "type": "string",
+          "x-example": "47"
+        },
+        {
+          "default": "all",
+          "description": "all, or a numeric team id paired with league_id in fotmob/player matchFilters",
+          "in": "query",
+          "name": "team_id",
+          "type": "string",
+          "x-example": "9825"
+        },
+        {
+          "description": "Numeric before timestamp from the upstream previous URL; omit for the newest page",
+          "in": "query",
+          "name": "before",
+          "type": "string",
+          "x-example": "1767902400"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-player-stats": {
+      "id": "fotmob-player-stats",
+      "method": "GET",
+      "path": "/fotmob/player-stats",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "player_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "season_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob player id from fotmob/search",
+          "in": "query",
+          "name": "player_id",
+          "required": true,
+          "type": "string",
+          "x-example": "961995"
+        },
+        {
+          "description": "Player-specific entryId from fotmob/player statSeasons",
+          "in": "query",
+          "name": "season_id",
+          "required": true,
+          "type": "string",
+          "x-example": "0-1"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-search": {
+      "id": "fotmob-search",
+      "method": "GET",
+      "path": "/fotmob/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "term",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Search phrase, 1 to 50 characters",
+          "in": "query",
+          "maxLength": 50,
+          "minLength": 1,
+          "name": "term",
+          "required": true,
+          "type": "string",
+          "x-example": "Arsenal"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-seasons": {
+      "id": "fotmob-seasons",
+      "method": "GET",
+      "path": "/fotmob/seasons",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id from /fotmob/leagues",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "integer",
+          "x-example": 47
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-stats": {
+      "id": "fotmob-stats",
+      "method": "GET",
+      "path": "/fotmob/stats",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "season_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "players",
+            "teams"
+          ]
+        },
+        {
+          "name": "stat",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "team_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "position",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "striker",
+            "winger",
+            "attackingMidfielder",
+            "midfielder",
+            "fullback",
+            "centerBack"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "string",
+          "x-example": "47"
+        },
+        {
+          "description": "Numeric season id from /fotmob/stats-categories; defaults to the newest season",
+          "in": "query",
+          "name": "season_id",
+          "type": "string",
+          "x-example": "36781"
+        },
+        {
+          "description": "Stats subject",
+          "enum": [
+            "players",
+            "teams"
+          ],
+          "in": "query",
+          "name": "type",
+          "required": true,
+          "type": "string",
+          "x-example": "players"
+        },
+        {
+          "description": "Stat id returned by /fotmob/stats-categories for this league, season, and type",
+          "in": "query",
+          "name": "stat",
+          "required": true,
+          "type": "string",
+          "x-example": "goals"
+        },
+        {
+          "description": "Optional numeric team id to filter player stats",
+          "in": "query",
+          "name": "team_id",
+          "type": "string",
+          "x-example": "8456"
+        },
+        {
+          "description": "Optional client-side player position filter",
+          "enum": [
+            "all",
+            "striker",
+            "winger",
+            "attackingMidfielder",
+            "midfielder",
+            "fullback",
+            "centerBack"
+          ],
+          "in": "query",
+          "name": "position",
+          "type": "string",
+          "x-example": "striker"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-stats-categories": {
+      "id": "fotmob-stats-categories",
+      "method": "GET",
+      "path": "/fotmob/stats-categories",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "season_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "players",
+            "teams"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "string",
+          "x-example": "47"
+        },
+        {
+          "description": "Numeric season id; omit to discover seasons",
+          "in": "query",
+          "name": "season_id",
+          "type": "string",
+          "x-example": "36781"
+        },
+        {
+          "description": "Stats subject",
+          "enum": [
+            "players",
+            "teams"
+          ],
+          "in": "query",
+          "name": "type",
+          "required": true,
+          "type": "string",
+          "x-example": "players"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-table": {
+      "id": "fotmob-table",
+      "method": "GET",
+      "path": "/fotmob/table",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "league_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob league id",
+          "in": "query",
+          "name": "league_id",
+          "required": true,
+          "type": "string",
+          "x-example": "47"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-team": {
+      "id": "fotmob-team",
+      "method": "GET",
+      "path": "/fotmob/team",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob team id",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "9825"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-team-fixtures": {
+      "id": "fotmob-team-fixtures",
+      "method": "GET",
+      "path": "/fotmob/team-fixtures",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "team_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob team id",
+          "in": "query",
+          "name": "team_id",
+          "required": true,
+          "type": "string",
+          "x-example": "9825"
+        },
+        {
+          "description": "Opaque cursor copied from fixtures.previousFixturesUrl in /fotmob/team or previous in the preceding response",
+          "in": "query",
+          "name": "cursor",
+          "required": true,
+          "type": "string",
+          "x-example": "https://pub.fotmob.com/prod/db/api/team/9825/fixture-by-date?beforeTimestamp=1785607200"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-team-news": {
+      "id": "fotmob-team-news",
+      "method": "GET",
+      "path": "/fotmob/team-news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "team_id",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "start_index",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "params": [
+        {
+          "description": "Numeric FotMob team id",
+          "in": "query",
+          "name": "team_id",
+          "required": true,
+          "type": "integer",
+          "x-example": 8456
+        },
+        {
+          "description": "Zero-based news offset from 0 through 10000",
+          "in": "query",
+          "maximum": 10000,
+          "minimum": 0,
+          "name": "start_index",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-transfers": {
+      "id": "fotmob-transfers",
+      "method": "GET",
+      "path": "/fotmob/transfers",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "mode",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "rumours",
+            "popular"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "last",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "6months",
+            "1year",
+            "2years",
+            "3years"
+          ]
+        },
+        {
+          "name": "direction",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "in",
+            "out"
+          ]
+        },
+        {
+          "name": "min_fee",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "max_fee",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "league_ids",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "team_ids",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "lastModified",
+            "fee",
+            "date",
+            "name",
+            "fromClubName",
+            "toClubName"
+          ]
+        },
+        {
+          "name": "exclude_extensions",
+          "in": "query",
+          "type": "boolean"
+        },
+        {
+          "name": "likely_only",
+          "in": "query",
+          "type": "boolean"
+        }
+      ],
+      "params": [
+        {
+          "default": "all",
+          "description": "Feed mode",
+          "enum": [
+            "all",
+            "rumours",
+            "popular"
+          ],
+          "in": "query",
+          "name": "mode",
+          "type": "string"
+        },
+        {
+          "default": 1,
+          "description": "One-based result page; 50 rows per page",
+          "in": "query",
+          "maximum": 200,
+          "minimum": 1,
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "default": "6months",
+          "description": "Time window",
+          "enum": [
+            "6months",
+            "1year",
+            "2years",
+            "3years"
+          ],
+          "in": "query",
+          "name": "last",
+          "type": "string"
+        },
+        {
+          "default": "all",
+          "description": "Transfer direction; applied when league_ids or team_ids is supplied",
+          "enum": [
+            "all",
+            "in",
+            "out"
+          ],
+          "in": "query",
+          "name": "direction",
+          "type": "string"
+        },
+        {
+          "description": "Minimum transfer fee in EUR",
+          "in": "query",
+          "minimum": 0,
+          "name": "min_fee",
+          "type": "integer"
+        },
+        {
+          "description": "Maximum transfer fee in EUR",
+          "in": "query",
+          "minimum": 0,
+          "name": "max_fee",
+          "type": "integer"
+        },
+        {
+          "description": "Comma-separated numeric FotMob league ids, up to 50; discover with /fotmob/leagues",
+          "in": "query",
+          "name": "league_ids",
+          "type": "string",
+          "x-example": "47"
+        },
+        {
+          "description": "Comma-separated numeric FotMob team ids, up to 50; discover with /fotmob/search",
+          "in": "query",
+          "name": "team_ids",
+          "type": "string",
+          "x-example": "8456"
+        },
+        {
+          "default": "lastModified",
+          "description": "Sort column",
+          "enum": [
+            "lastModified",
+            "fee",
+            "date",
+            "name",
+            "fromClubName",
+            "toClubName"
+          ],
+          "in": "query",
+          "name": "order_by",
+          "type": "string"
+        },
+        {
+          "default": false,
+          "description": "Exclude contract-extension records",
+          "in": "query",
+          "name": "exclude_extensions",
+          "type": "boolean"
+        },
+        {
+          "default": false,
+          "description": "Return only likely rumours; mode must be rumours",
+          "in": "query",
+          "name": "likely_only",
+          "type": "boolean"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-trending-news": {
+      "id": "fotmob-trending-news",
+      "method": "GET",
+      "path": "/fotmob/trending-news",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-trending-searches": {
+      "id": "fotmob-trending-searches",
+      "method": "GET",
+      "path": "/fotmob/trending-searches",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide": {
+      "id": "fotmob-tv-guide",
+      "method": "GET",
+      "path": "/fotmob/tv-guide",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ]
+        },
+        {
+          "name": "timezone",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "params": [
+        {
+          "description": "Market code from /fotmob/tv-guide-countries",
+          "enum": [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ],
+          "in": "query",
+          "name": "country",
+          "required": true,
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "IANA timezone for local times",
+          "in": "query",
+          "name": "timezone",
+          "type": "string",
+          "x-example": "America/New_York"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide-channels": {
+      "id": "fotmob-tv-guide-channels",
+      "method": "GET",
+      "path": "/fotmob/tv-guide-channels",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "description": "Market code from /fotmob/tv-guide-countries",
+          "enum": [
+            "us",
+            "se",
+            "gb",
+            "de",
+            "no",
+            "es",
+            "mx",
+            "ar",
+            "bo",
+            "cl",
+            "co",
+            "cr",
+            "ec",
+            "gt",
+            "hn",
+            "ni",
+            "pa",
+            "py",
+            "pe",
+            "uy",
+            "ve",
+            "da",
+            "ca",
+            "au",
+            "at",
+            "be",
+            "bg",
+            "hr",
+            "cy",
+            "cz",
+            "ee",
+            "fi",
+            "fr",
+            "gr",
+            "hu",
+            "is",
+            "ie",
+            "il",
+            "it",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "ch",
+            "tr",
+            "za",
+            "br",
+            "in",
+            "me",
+            "id",
+            "th",
+            "mm",
+            "al",
+            "az",
+            "bl",
+            "ba",
+            "ks",
+            "la",
+            "li",
+            "mk",
+            "rs",
+            "sk",
+            "ua",
+            "essv",
+            "nz",
+            "bd",
+            "cn",
+            "gh",
+            "hk",
+            "jp",
+            "kr",
+            "ma",
+            "mt",
+            "my",
+            "ng",
+            "ph",
+            "pk",
+            "sg",
+            "si",
+            "tz"
+          ],
+          "in": "query",
+          "name": "country",
+          "required": true,
+          "type": "string",
+          "x-example": "us"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "fotmob-tv-guide-countries": {
+      "id": "fotmob-tv-guide-countries",
+      "method": "GET",
+      "path": "/fotmob/tv-guide-countries",
+      "pathParams": [],
+      "queryParams": [],
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}
