@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'fotmob';
-    public const VERSION = '0.1.5';
+    public const VERSION = '0.1.6';
     public const OPERATION_COUNT = 31;
     public const OPERATION_IDS = ["fotmob-audio-matches", "fotmob-fifa-ranking-periods", "fotmob-fifa-rankings", "fotmob-latest-news", "fotmob-league", "fotmob-leagues", "fotmob-lineup-builder-players", "fotmob-lineup-builder-team", "fotmob-match", "fotmob-match-media", "fotmob-matches", "fotmob-news", "fotmob-news-article", "fotmob-player", "fotmob-player-match-stats", "fotmob-player-matches", "fotmob-player-stats", "fotmob-search", "fotmob-seasons", "fotmob-stats", "fotmob-stats-categories", "fotmob-table", "fotmob-team", "fotmob-team-fixtures", "fotmob-team-news", "fotmob-transfers", "fotmob-trending-news", "fotmob-trending-searches", "fotmob-tv-guide", "fotmob-tv-guide-channels", "fotmob-tv-guide-countries"];
 
@@ -56,7 +56,7 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-fotmob-php/0.1.5',
+            'User-Agent: crawlora-fotmob-php/0.1.6',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
         try {
